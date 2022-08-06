@@ -62,7 +62,7 @@ func (f *fork) ProposeRule(cert consensus.SyncInfo, cmd consensus.Command) (prop
 	if !ok {
 		return proposal, false
 	}
-	grandparent, ok := f.mods.BlockChain().Get(parent.Hash())
+	grandparent, ok := f.mods.BlockChain().Get(parent.Parent())
 	if !ok {
 		return proposal, false
 	}
